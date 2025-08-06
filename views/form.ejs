@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new Post</title>
+    <!-- <link rel="stylesheet" href="/styleForm.css"> -->
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #form-div {
+            margin: 40px 250px;
+            text-align: center;
+        }
+
+        #form-heading {
+            width: 100%;
+            height: 40px;
+            padding-top: 15px;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-size: x-large;
+            font-style: normal;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- header -->
+    <%- include("includes/head.ejs") %>
+
+        <div id="form-heading"><i class="fa-solid fa-pen-nib"></i>&nbsp; Write Your Own Quote ... </div>
+
+
+        <div id="form-div">
+            <form method="post" action="/posts"
+                class="bg-white p-8 rounded-xl shadow-lg w-80 text-center space-y-4 border-2 border-gray-20">
+
+                <input type="text" name="username" placeholder="Enter Username"
+                    class="w-[90%] px-3 py-2 border border-gray-300 rounded-md text-sm" />
+
+                <textarea name="shayri" placeholder="Write your Shayri"
+                    class="w-[90%] px-3 py-2 border border-gray-300 rounded-md text-sm"></textarea>
+
+                <button type="submit"
+                    class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 text-sm font-medium">
+                    Submit Post
+                </button>
+            </form>
+        </div>
+        <!-- Footer -->
+        <%- include("includes/footer.ejs") %>
+
+</body>
+
+</html>

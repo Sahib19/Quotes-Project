@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes Page</title>
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <%- include("includes/head.ejs") %>
+
+
+        <main>
+                <div class="card">
+
+                    <h3 class="username">&#10084;<%= post.username %>
+                    </h3>
+                    <p class="description">
+                        <%= post.shayri %>
+                    </p>
+                    <div class="card-buttons">
+                        
+                        <button class="btn edit"><a
+                                href="http://localhost:8080/posts/back">Back</a></button>
+                        
+                        </form>
+
+                    </div>
+
+                </div>
+
+        </main>
+
+
+        <!-- //footer comes here -->
+        <%- include("includes/footer.ejs") %>
+</body>
+
+</html>
