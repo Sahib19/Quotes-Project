@@ -18,21 +18,26 @@
 
     <style>
         #form-div {
-            margin: 40px 250px;
+            max-width: 500px;
+            margin: 0 auto 60px;
+            padding: 20px;
             text-align: center;
         }
 
         #form-heading {
             width: 100%;
-            height: 40px;
-            padding-top: 15px;
+            padding: 40px 20px 20px;
             font-family: "Montserrat", sans-serif;
             font-optical-sizing: auto;
-            font-weight: 700;
-            font-size:x-large;
+            font-weight: 800;
+            font-size: 2.5rem;
             font-style: normal;
             text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
         }
     </style>
 
@@ -48,10 +53,20 @@
         <div id="form-div">
             <form method="post" action="/posts/<%= post.id %>?_method=PATCH" class="bg-white p-8 rounded-xl shadow-lg w-80 text-center space-y-4 border-2 border-gray-20">
 
+                <% if (errors && errors.length > 0) { %>
+                    <div style="background-color: #fee; border: 1px solid #fcc; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+                        <ul style="list-style: none; padding: 0; margin: 0; text-align: left;">
+                            <% errors.forEach(error => { %>
+                                <li style="color: #c33; margin-bottom: 5px;">• <%= error %></li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                <% } %>
+
                 <input disabled type="text" name="username" placeholder="Enter Username"
                     class="w-[90%] px-3 py-2 border border-gray-300 rounded-md text-sm" value="<%= post.username %>" />
 
-                <textarea name="shayri" placeholder="Write your Shayri" rows="5"
+                <textarea name="shayri" placeholder="Write your Shayri" rows="5" required
                     class=" w-[90%] px-3 py-2 border border-gray-300 rounded-md text-sm"><%= post.shayri %></textarea>
 
                 <button type="submit"

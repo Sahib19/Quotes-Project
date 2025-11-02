@@ -19,21 +19,15 @@
     <%- include("includes/head.ejs") %>
 
 
-        <main>
-                <div class="card">
+        <main style="display: flex; justify-content: center; align-items: center; min-height: calc(100vh - 200px);">
+                <div class="card" style="max-width: 600px; width: 100%;">
 
-                    <h3 class="username">&#10084;<%= post.username %>
-                    </h3>
-                    <p class="description">
-                        <%= post.shayri %>
+                    <h3 class="username"><%= post.username %></h3>
+                    <p class="description" style="font-size: 1.2rem; line-height: 2;">
+                        "<%= post.shayri %>"
                     </p>
                     <div class="card-buttons">
-                        
-                        <button class="btn edit"><a
-                                href="http://localhost:8080/posts/back">Back</a></button>
-                        
-                        </form>
-
+                        <button class="btn edit" style="width: 100%;"><a href="/posts">← Back to All Quotes</a></button>
                     </div>
 
                 </div>
